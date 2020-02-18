@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GarageDoor Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.garagedoor.js"></script>
+
+</head>
+<body>
+
+<h1>Simple</h1>
+<span id="demo-1">Hello!</span>
+
+
+<h2>With Events</h2>
+<span id="demo-2">I have events!</span>
+<span id="demo-2-output"></span>
+
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('#demo-1').GarageDoor();
+
+        $('#demo-2').GarageDoor({
+            onRaise: function () {
+                $('#demo-2-output').text('Going Up!')
+            },
+            onLower: function () {
+                $('#demo-2-output').text('Going Down!')
+            }
+        });
+    })
+</script>
+
+</html>
